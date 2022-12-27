@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: dep1
+
+
+spec:
+  selector:
+    matchLabels:
+      app: m
+  replicas: 3
+  template: 
+    metadata:
+      name: dep1
+      labels:
+        app: m
+    spec:
+      containers:
+        - image: mooostafa/projectos
+          name: projectos-container
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "1"
